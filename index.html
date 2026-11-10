@@ -1,0 +1,95 @@
+<!doctype html>
+<!--
+  navypirate83.com: the front page of the site.
+  This one small page is what people see at the bare address
+  (navypirate83.com). Each project lives in its own folder after it
+  (like navypirate83.com/wubrgr/), published from its own repository.
+  Everything here is plain HTML and CSS, with no code that runs.
+-->
+<html lang="en">
+  <head>
+    <!-- The page's text encoding, and how wide it is on a phone -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- The name shown on the browser tab, and a short description for search results -->
+    <title>navypirate83</title>
+    <meta name="description" content="navypirate83's projects, including WUBRG'r, a Magic: The Gathering card binder app.">
+
+    <!-- The look of the page. "prefers-color-scheme" switches to light
+         colors for people whose device is set to light mode. -->
+    <style>
+      /* The colors, kept in one place so they are easy to change */
+      :root {
+        --background: #14151a;
+        --card: #1f2128;
+        --border: #34363f;
+        --text: #eceae6;
+        --muted: #a3a6b0;
+        --accent: #e0875a;
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --background: #f6f5f2;
+          --card: #ffffff;
+          --border: #dcd9d2;
+          --text: #1f2128;
+          --muted: #5b5f6b;
+          --accent: #c4642f;
+        }
+      }
+
+      /* The whole page: centered, with room around it */
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        box-sizing: border-box;
+        background: var(--background);
+        color: var(--text);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      }
+
+      /* The column holding everything, never wider than a phone-sized column */
+      main {
+        width: 100%;
+        max-width: 420px;
+      }
+
+      h1 { margin: 0 0 6px; font-size: 28px; }
+      p.intro { margin: 0 0 24px; color: var(--muted); line-height: 1.5; }
+
+      /* One project: a card that is a big tappable link */
+      a.project {
+        display: block;
+        padding: 18px 20px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        color: inherit;
+        text-decoration: none;
+      }
+      a.project:hover,
+      a.project:focus-visible { border-color: var(--accent); }
+      a.project strong { display: block; margin-bottom: 4px; font-size: 18px; color: var(--accent); }
+      a.project span { color: var(--muted); line-height: 1.4; }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <!-- Who this is -->
+      <h1>navypirate83</h1>
+      <p class="intro">My projects.</p>
+
+      <!-- The one project so far. Add another card like this one for each new project. -->
+      <a class="project" href="/wubrgr/">
+        <strong>WUBRG'r</strong>
+        <span>A Magic: The Gathering card binder. Keep your collection in your account, on your phone and on the web.</span>
+      </a>
+    </main>
+  </body>
+</html>
